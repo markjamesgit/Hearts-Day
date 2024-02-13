@@ -1,0 +1,365 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --header: #edc2d8ff;
+  --body_color: #fcf6f5ff;
+  --text: #8abad3ff;
+  --header_text: #7ca1d9;
+}
+body {
+  background-color: var(--body_color);
+}
+header {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--header);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+header a {
+  text-decoration: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 4.3rem;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  padding: 0.4rem;
+  color: var(--body_color);
+  transition: 0.2s;
+}
+header a:hover {
+  color: var(--header_text);
+  cursor: pointer;
+}
+main {
+  text-align: left;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 3rem;
+  padding: 5rem;
+}
+.main-pic {
+  border-radius: 50% 20% / 10% 40%;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-style: do;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.animated-text {
+  text-align: left;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  font-size: 7rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.animated-text span {
+  position: relative;
+}
+
+.animated-text span::before {
+  content: "Bebi!";
+  color: #eb499a;
+  animation: words 20s infinite;
+}
+
+.animated-text span::after {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  width: calc(100% + 8px);
+  height: 100%;
+  background-color: var(--body_color);
+  border-left: 6px solid var(--header_text);
+  right: -8px;
+  animation: cursor 0.8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 2px solid #ff7f5000;
+  }
+}
+
+@keyframes words {
+  0%,
+  20% {
+    content: "Mimaaa!";
+  }
+  21%,
+  40% {
+    content: "Par!";
+  }
+  41%,
+  60% {
+    content: "Honeybunch!";
+  }
+  61%,
+  80% {
+    content: "Madam!";
+  }
+  81%,
+  100% {
+    content: "Asawa!";
+  }
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px);
+  }
+}
+.caption {
+  width: 100%;
+  height: 29vh;
+  padding: 1rem;
+  background-color: var(--text);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+}
+.caption p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 5rem;
+  color: var(--body_color);
+}
+.fa-heart {
+  transition: 0.2s;
+}
+.fa-heart:hover {
+  color: #c42e2e;
+  font-size: 6rem;
+}
+.caption span {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 2.8rem;
+  color: var(--header);
+}
+footer {
+  position: static;
+  bottom: 0;
+  right: 0;
+  margin-top: 20rem;
+  height: 15vh;
+  background-color: var(--header);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+.social p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  color: var(--body_color);
+}
+.social span {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 2.3rem;
+  color: var(--header_text);
+}
+.box {
+  display: flex;
+  gap: 1rem;
+}
+.box a {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 2.3rem;
+  color: var(--header_text);
+}
+.fa-facebook .fa-facebook-messenger .fa-instagram {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 2.3rem;
+  color: var(--header_text);
+}
+/*phone size*/
+@media only screen and (max-width: 576px) {
+  header a {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  main {
+    height: 50vh;
+  }
+  section {
+    margin-top: 5rem;
+    flex-direction: column;
+    padding: 1.2rem;
+  }
+  .main-pic {
+    width: 170px;
+    height: 170px;
+  }
+  .animated-text {
+    text-align: center;
+    font-size: 2.8rem;
+  }
+  .caption {
+    margin-top: 5rem;
+    line-height: 3rem;
+  }
+  .caption p {
+    font-size: 1.8rem;
+  }
+  .caption span {
+    font-size: 1.6rem;
+  }
+  footer {
+    height: 10vh;
+    margin-top: 8rem;
+  }
+  .social p {
+    font-size: 1.2rem;
+  }
+  .social span {
+    line-height: 2rem;
+    font-size: 1.4rem;
+  }
+  .box a {
+    font-size: 1.6rem;
+  }
+}
+
+/*tablet size*/
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  header a {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  main {
+    height: 50vh;
+  }
+  section {
+    margin-top: 8rem;
+    flex-direction: column;
+    padding: 1.2rem;
+  }
+  .main-pic {
+    width: 250px;
+    height: 250px;
+  }
+  .animated-text {
+    text-align: center;
+    font-size: 2.8rem;
+  }
+  .caption {
+    margin-top: 10rem;
+  }
+  .caption p {
+    font-size: 2.8rem;
+  }
+  .caption span {
+    font-size: 2.2rem;
+  }
+  footer {
+    margin-top: 16rem;
+  }
+  .social p {
+    font-size: 2rem;
+  }
+  .social span {
+    font-size: 1.5rem;
+  }
+}
+
+/*laptop size*/
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  header {
+    gap: 2rem;
+  }
+  header a {
+    font-weight: bold;
+    font-size: 2.2rem;
+  }
+  main {
+    height: 50vh;
+  }
+  section {
+    margin: 4rem 0 0 3rem;
+    flex-direction: row;
+    padding: 1.2rem;
+  }
+  .main-pic {
+    width: 250px;
+    height: 250px;
+  }
+  .animated-text {
+    font-size: 3.5rem;
+  }
+  .caption {
+    margin-top: 9rem;
+  }
+  .caption p {
+    font-size: 4.3rem;
+  }
+  .caption span {
+    font-size: 3.2rem;
+  }
+  footer {
+    margin-top: 16rem;
+  }
+  .social p {
+    font-size: 2rem;
+  }
+  .social span {
+    font-size: 1.5rem;
+  }
+}

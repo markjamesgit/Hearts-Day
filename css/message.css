@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --header: #edc2d8ff;
+  --body_color: #fcf6f5ff;
+  --text: #8abad3ff;
+  --header_text: #7ca1d9;
+}
+body {
+  background-color: var(--body_color);
+}
+header {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--header);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+header a {
+  text-decoration: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 4.3rem;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  padding: 0.4rem;
+  color: var(--body_color);
+  transition: 0.2s;
+}
+header a:hover {
+  color: var(--header_text);
+  cursor: pointer;
+}
+.content {
+  font-family: "Poppin", sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book {
+  width: 550px;
+  height: 650px;
+  position: relative;
+  transition-duration: 1s;
+  perspective: 1500;
+}
+
+input {
+  display: none;
+}
+
+.cover,
+.back-cover {
+  background-color: rgb(248, 165, 208);
+  width: 100%;
+  height: 100%;
+  border-radius: 0 15px 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center left;
+}
+.title-book {
+  margin-left: 3rem;
+  font-size: 5.9rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+.cover {
+  position: absolute;
+  z-index: 17;
+}
+
+.cover label {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.back-cover {
+  position: relative;
+  z-index: -1;
+}
+
+.page {
+  position: absolute;
+  background-color: white;
+  width: 530px;
+  height: 640px;
+  border-radius: 0 15px 15px 0;
+  margin-top: 0.3rem;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition-duration: 1.5s;
+  transition: transform 1s ease-in-out, box-shadow 0.5s;
+}
+
+.page img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px 0 0 15px;
+}
+
+.front-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.front-page h2 {
+  margin-top: 0.4rem;
+  padding: 0.4rem;
+  text-align: center;
+  font-size: 1.7rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.front-page ol {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.8rem;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.4rem;
+}
+
+.front-page p {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  max-width: 40rem;
+  width: 100%;
+}
+
+.back-page {
+  transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  z-index: 99;
+}
+.back-page img {
+  object-fit: cover;
+}
+.next,
+.prev {
+  position: absolute;
+  bottom: 1em;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.next {
+  right: 2em;
+}
+
+.prev {
+  left: 1em;
+}
+
+#page1 {
+  z-index: 16;
+}
+
+#page2 {
+  z-index: 15;
+}
+
+#page3 {
+  z-index: 14;
+}
+
+#page4 {
+  z-index: 13;
+}
+
+#page5 {
+  z-index: 12;
+}
+
+#page6 {
+  z-index: 11;
+}
+
+#page7 {
+  z-index: 10;
+}
+
+#page8 {
+  z-index: 9;
+}
+
+#page9 {
+  z-index: 8;
+}
+#page10 {
+  z-index: 7;
+}
+#page11 {
+  z-index: 6;
+}
+#page12 {
+  z-index: 5;
+}
+#page13 {
+  z-index: 4;
+}
+#page14 {
+  z-index: 3;
+}
+#page15 {
+  z-index: 2;
+}
+#page16 {
+  z-index: 1;
+}
+#checkbox-cover:not(:checked) ~ .book #page1,
+#checkbox-cover:not(:checked) ~ .book #page2,
+#checkbox-cover:not(:checked) ~ .book #page3,
+#checkbox-cover:not(:checked) ~ .book #page4,
+#checkbox-cover:not(:checked) ~ .book #page5,
+#checkbox-cover:not(:checked) ~ .book #page6,
+#checkbox-cover:not(:checked) ~ .book #page7,
+#checkbox-cover:not(:checked) ~ .book #page8,
+#checkbox-cover:not(:checked) ~ .book #page9,
+#checkbox-cover:not(:checked) ~ .book #page10,
+#checkbox-cover:not(:checked) ~ .book #page11,
+#checkbox-cover:not(:checked) ~ .book #page12,
+#checkbox-cover:not(:checked) ~ .book #page13,
+#checkbox-cover:not(:checked) ~ .book #page14,
+#checkbox-cover:not(:checked) ~ .book #page15,
+#checkbox-cover:not(:checked) ~ .book #page16,
+#checkbox-cover:not(:checked) ~ .book .back-cover {
+  z-index: -1;
+}
+
+#checkbox-cover:checked ~ .book {
+  transform: translateX(200px);
+}
+
+#checkbox-cover:checked ~ .book .cover {
+  transition: transform 1.5s, z-index 0.3s 0.3s;
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+
+#checkbox-cover:checked ~ .book .page {
+  box-shadow: 0 0 3px rgb(99, 98, 98);
+}
+
+#checkbox-page1:checked ~ .book #page1,
+#checkbox-page2:checked ~ .book #page2,
+#checkbox-page3:checked ~ .book #page3,
+#checkbox-page4:checked ~ .book #page4,
+#checkbox-page5:checked ~ .book #page5,
+#checkbox-page6:checked ~ .book #page6,
+#checkbox-page7:checked ~ .book #page7,
+#checkbox-page8:checked ~ .book #page8,
+#checkbox-page9:checked ~ .book #page9,
+#checkbox-page10:checked ~ .book #page10,
+#checkbox-page11:checked ~ .book #page11,
+#checkbox-page12:checked ~ .book #page12,
+#checkbox-page13:checked ~ .book #page13,
+#checkbox-page14:checked ~ .book #page14,
+#checkbox-page15:checked ~ .book #page15,
+#checkbox-page16:checked ~ .book #page16 {
+  transform: rotateY(-180deg);
+  z-index: 16;
+}
+
+/*phone size*/
+@media only screen and (max-width: 576px) {
+  header {
+    width: 100vw;
+  }
+  header a {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  main {
+    height: auto;
+  }
+  .content {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .book {
+    margin-right: 14rem;
+    margin-bottom: 2rem;
+    width: 180px;
+    height: 310px;
+  }
+  .page {
+    width: 170px;
+    height: 300px;
+  }
+  .front-page {
+    padding: 0;
+  }
+  .front-page h2 {
+    max-width: 90%;
+    font-size: 0.8rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-weight: bold;
+  }
+  .front-page ol {
+    margin-left: 1.6rem;
+    font-size: 0.6rem;
+    line-height: normal;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-weight: 400;
+  }
+  .front-page p {
+    padding: 0.3rem;
+    max-width: 98%;
+    font-size: 0.6rem;
+    text-align: justify;
+  }
+  .next,
+  .prev {
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 1em;
+  }
+  .next {
+    right: 2em;
+  }
+  .prev {
+    left: 1em;
+  }
+  .title-book {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+  }
+}
+/*tablet size*/
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  header a {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  main {
+    height: 50vh;
+  }
+  .book {
+    margin-right: 8rem;
+    width: 300px;
+    height: 430px;
+  }
+  .page {
+    width: 290px;
+    height: 420px;
+  }
+  .front-page {
+    padding: 0;
+  }
+  .front-page h2 {
+    font-size: 1.2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-weight: bold;
+  }
+  .front-page ol {
+    margin-left: 1.9rem;
+    font-size: 0.8em;
+    line-height: normal;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-weight: bold;
+  }
+  .front-page p {
+    padding: 0.3rem;
+    max-width: 98%;
+    font-size: 0.8rem;
+    text-align: justify;
+  }
+  .next,
+  .prev {
+    font-size: 1.2rem;
+  }
+  .title-book {
+    margin-left: 0;
+    font-size: 3.5rem;
+  }
+}
+/*laptop size*/
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  header {
+    gap: 2rem;
+  }
+  header a {
+    font-weight: bold;
+    font-size: 2.2rem;
+  }
+  .book {
+    margin-right: 8rem;
+    width: 410px;
+    height: 530px;
+  }
+  .page {
+    width: 390px;
+    height: 520px;
+  }
+  .front-page {
+    padding: 0;
+  }
+  .front-page h2 {
+    font-size: 1.2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-weight: bold;
+  }
+  .front-page ol {
+    margin-left: 1.9rem;
+    font-size: 0.8em;
+    line-height: normal;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-weight: bold;
+  }
+  .front-page p {
+    padding: 0.3rem;
+    max-width: 98%;
+    font-size: 0.8rem;
+    text-align: justify;
+  }
+  .next,
+  .prev {
+    font-size: 1.2rem;
+  }
+  .title-book {
+    font-size: 3.5rem;
+  }
+}
